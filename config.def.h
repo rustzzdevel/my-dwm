@@ -12,9 +12,11 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {
-	"Terminus (TTF):size=12",
+	"Terminus (TTF):size=16",
+	"Symbols Nerd Font Mono:size=16",
+	"Font Awesome:size=16",
 };
-static const char dmenufont[]       = "Terminus (TTF):size=12";
+static const char dmenufont[]       = "Terminus (TTF):size=16";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#504945";
 static const char col_gray3[]       = "#bdae93";
@@ -34,7 +36,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "󰖟", "󰘦", "", "", "", "", "󰻞", "" };
 static const char *tagsalt[] = { "1", "2", "3", "4", "5",  "6", "7", "8", "9" };
 static const int momentaryalttags = 0; /* 1 means alttags will show only when key is held down*/
 
@@ -44,8 +46,10 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class             instance    title       tags mask     isfloating   monitor */
-	//{ "",     NULL,       NULL,       0,            1,           -1 },
-	{},
+	{ "ktalk",           NULL,       NULL,       0,            1,           -1 },
+	{ "copyq",           NULL,       NULL,       0,            1,           -1 },
+	{ "Vmware-view",     NULL,       "Support",  0,            1,           -1 },
+	{ "vmware-view",     NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
